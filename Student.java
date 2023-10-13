@@ -2,7 +2,7 @@ import java.util.Scanner;
 class dob {
     int date, month, year;
 }
-public class Student {
+public class Student implements User {
     int sem;
     String enrollmentNo, name, emailid, password;
     dob DOB = new dob();
