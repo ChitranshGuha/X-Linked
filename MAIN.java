@@ -25,13 +25,28 @@ public class Main {
                 enn=sc.next();
                 System.out.print("Enter password");
                 pwd=sc.next();
-                flag=s.StuLogin(enn,pwd);
+                flag=s.Login(enn,pwd);
             }
         }
         else if(ch==2){
             System.out.println("Choose:");
             System.out.println("1:Sign up");
             System.out.println("2:Login");
+            ch1 = sc.nextInt();
+            if(ch1==1){
+                Club c = new Club();
+                c.getdata();
+                c.showdata();
+            }
+            else if(ch1==2){
+                System.out.println("Hello again");
+                String clid , pwd;
+                System.out.println("Enter club id:");
+                enn=sc.next();
+                System.out.print("Enter password");
+                pwd=sc.next();
+                flag=c.Login(clid,pwd);
+            }
         }
         else if(ch==3){
 
