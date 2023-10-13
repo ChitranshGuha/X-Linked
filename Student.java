@@ -37,7 +37,7 @@ public class Student {
         System.out.println("Semester: " + sem);
     }
 
-    int StuLogin(String enn, String pwd) {
+    int Login(String enn, String pwd) {
         if (enrollmentNo.equals(enn) && password.equals(pwd)) {
             System.out.println("Login Complete");
             return 1;
