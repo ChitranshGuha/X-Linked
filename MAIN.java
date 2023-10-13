@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String args[]){
         int ch , flag , ch1;
-        System.out.println("X + Linkedin");
+        System.out.println("X_Linkedin");
         System.out.println("Choose:");
         System.out.println("1:Student");
         System.out.println("2:Club");
@@ -49,7 +49,7 @@ public class Main {
             }
         }
         else if(ch==3){
-
+                System.exit(0);
         }
         else{
 
