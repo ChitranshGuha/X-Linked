@@ -1,7 +1,30 @@
 import java.util.Scanner;
-public class Club implements User{
+import java.util.ArrayList;
+import java.util.List;
+public class Club implements User,Postable {
+    public Club(){
+        notices = new ArrayList<>();
+    }
     String clubid , name, emailid , password;
-    void getdata() {
+    private List<Notice> notices;
+    public void reset(){
+        clubid="" ;
+        name="";
+        emailid="" ;
+        password="";
+    }
+    @Override
+    public void postNotice(String noticeContent) {
+        Notice notice = new Bulletin(noticeContent);
+        notices.add(notice);
+    }
+    @Override
+    public void displayNotices() {
+        for (Notice notice : notices) {
+            notice.display();
+        }
+    }
+    public void getdata() {
         Scanner sc = new Scanner(System.in);
         System.out.println("* Enter Information *");
         System.out.print("Name:");
@@ -12,15 +35,16 @@ public class Club implements User{
         password = sc.next();
         System.out.print("Email id:");
         emailid = sc.next();
+        sc.close();
     }
 
-    void showdata() {
+    public void showdata() {
         System.out.println("Name: " + name);
         System.out.println("club id: " + clubid);
         System.out.println("Email id: " + emailid);
     }
 
-    int Login(String clid, String pwd) {
+    public int Login(String clid , String pwd) {
         if (clubid.equals(clid) && password.equals(pwd)) {
             System.out.println("Login Complete");
             return 1;
